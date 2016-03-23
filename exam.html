@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+	function sc()
+	{
+		var n=document.f1.d1.value;
+		if(n=="")
+		{
+			text="name field is blank";
+		}
+		else
+		{
+			text="";
+		}
+		document.getElementById("t1").innerHTML=text;
+
+		var p=document.f1.d2.value;
+		if(p=="")
+		{
+			text="password field is blank";
+		}
+		else
+		{
+			text="";
+		}
+		document.getElementById("t2").innerHTML=text;
+
+		if(p.length>1 && p.length<=6)
+		{
+			text="password is not strong"
+		}
+		else
+		{
+			text=""
+		}
+        document.getElementById("t7").innerHTML=text;        
+
+		var d=document.f1.d3.value;
+		if(d=="")
+		{
+			text="DOB field is blank";
+		}
+		else
+		{
+			text="";
+		}
+		document.getElementById("t3").innerHTML=text;
+
+        
+		
+		var s=d.split("-")
+		var dt=new Date();
+		var dt1=dt.getDate();
+		var dt2=dt.getMonth();
+		var dt3=dt.getFullYear();
+		var sub=dt3-s[0];
+		if(sub>50)
+		{
+			text="age expired";
+		}
+		else
+		{
+		text="";
+		}
+        document.getElementById("t9").innerHTML=text;
+
+
+		var e=document.f1.d4.value;
+		if(e=="")
+		{
+			text="E-mail field is blank";
+		}
+		else
+		{
+			text="";
+		}
+		document.getElementById("t4").innerHTML=text;
+        
+        var e=document.f1.d4.value;
+		var str=e.split("@");
+		var res=str[1].split(".");
+        if(str=="" && str.length==2 && res.length==2)
+        {
+        	text="valid email";
+        }
+        else 
+        {
+        	text="invalid";
+        }
+        document.getElementById("t8").innerHTML=text;
+
+
+	    var m=document.f1.d5.value;
+		var f=document.f1.d6.value;
+		if(m=="" || f=="")
+		{
+			text= "gender field is blank";
+		}
+		else
+		{
+			text="";
+		}
+		document.getElementById("t5").innerHTML=text;
+
+		var dis=document.f1.d7.value;
+		
+		if(dis=="")
+		{
+			text= "district field is blank";
+		}
+		else
+		{
+			text="";
+		}
+		document.getElementById("t6").innerHTML=text;
+
+        if(n!="" && p!="" && d!="" && e!="" && dis!="" && (m!="" || f!="") )
+        {
+        	text="registered";
+        }
+        else
+        {
+        	text="something is wrong";
+        }
+        document.getElementById("t10").innerHTML=text;
+
+
+	}
+	</script>
+</head>
+<body>
+<form name="f1" style="background-color:yellow;margin-left:400px;width:900px;height:500px">
+	<h1 style="color:red;padding-left:100px">REGISTRATION FORM</h1><br><br>
+	<h3 style="margin-left:10px">NAME:&nbsp;<input type="text" id="d1" style="margin-left:100px"></h3>
+	<h3 style="margin-left:10px">PASSWORD:&nbsp;<input type="password" id="d2" style="margin-left:52px"></h3>
+	<h3 style="margin-left:10px">DOB:&nbsp;<input type="date" id="d3" style="margin-left:118px"></h3>
+	<h3 style="margin-left:10px">E-MAIL:&nbsp;<input type="text" id="d4" style="margin-left:85px"></h3>
+	<p style="margin-left:10px"><h3 style="margin-left:10px">GENDER:</h3>&nbsp;<h3 style="margin-left:170px;margin-top: -60px">MALE<input type="checkbox" id="d5" name="m">&nbsp;FEMALE:<input type="checkbox" id="d6" name="m"></h3><p>
+	<h3 style="margin-left:10px">DISTRICT:&nbsp;
+	<select id="d7" style="margin-left:60px">
+		<option value=" ">SELECT</option>
+		<option value="1">CALICUT</option>
+		<option value="2">KANNUR</option>
+		<option value="3">WAYANAD</option>
+		<option value="4">THRISSUR</option>
+	</select><br>
+	<input type="button" value="SUBMIT" onclick="sc()" style="margin-left:170px;margin-top: 50px"><label id="t10" style="color:red"></label>
+</form>
+<form name="f2" style="margin-left:400px;margin-top: -300px">
+	<label id="t1" style="margin-left:40px;color:red"></label><br><br>
+	<label id="t2" style="margin-left:40px;color:red"></label><label id="t7" style="margin-left:40px;color:red"></label><br><br>
+	<label id="t3" style="margin-left:40px;color:red"></label><label id="t9" style="margin-left:40px;color:red"></label><br><br>
+	<label id="t4" style="margin-left:40px;color:red"></label><label id="t8" style="margin-left:40px;color:red"></label><br><br>
+	<label id="t5" style="margin-left:40px;color:red"></label><br><br>
+	<label id="t6" style="margin-left:40px;color:red"></label><br><br>
+	
+</form>
+</body>
+</html>
